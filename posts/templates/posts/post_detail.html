@@ -1,0 +1,11 @@
+{% extends "posts/post_base.html" %}
+{% block post_content %}
+<div class="container">
+	<h5>Post History of User: @{{ post.user.username }} on {{post.created_at}} </h5>
+</div>
+
+
+<div class="col-md-12">
+    {% include "posts/_post.html" %}
+</div>
+{% endblock %}

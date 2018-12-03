@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Biome</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <!-- Custom Fonts for the Website -->
+  <link href="https://fonts.googleapis.com/css?family=Anton|Montserrat" rel="stylesheet">
+  <link href="//db.onlinewebfonts.com/c/d0374bf16da70eff39d6f085935f8882?family=DTLProkyonST" rel="stylesheet" type="text/css"/>
+
+
+
+  <!-- Link to the local CSS stylesheet -->
+  <link rel="stylesheet" href="{% static 'Biome/css/master.css'%}">
+
+</head>
+
+<body data-spy="scroll" >
+
+  <div class="container">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary" role="navigation" id="navbar">
+      <div class="container">
+        <a class="navbar-brand nav-left" href="{% url "Home" %}" id="brand">BIOME</a>
+        <ul class="navbar navbar-dark bg-primary">
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'posts:create' %}" class="btn btn-outline-primary" id="navigateitems">Post a Message</a></li>
+          <li><a href="{% url 'Groups:all' %}" class="btn btn-outline-primary" id="navigateitems">BIOME Groups</a></li>
+          <li><a href="{% url 'Groups:create' %}" class="btn btn-outline-primary" id="navigateitems" >Create a New Community</a></li>
+          <li><a href="{% url 'accounts:logout' %}" class="btn btn-simple" id="navigateitems">Log out</a></li>
+          {% else %}
+          <li><a href="{% url 'Groups:all' %}" class="btn btn-outline-primary" id="navigateitems">BIOME Groups</a></li>
+          <li><a href="{% url 'accounts:login' %}" class="btn btn-outline-primary" id="navigateitems">Log in</a></li>
+          <li><a href="{% url 'accounts:signup' %}" class="btn btn-outline-primary" id="navigateitems">Sign up</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="jumbotron">
+    {% block content %}
+
+    {% endblock %}
+  </div>
+</body>
+
+<!-- Link to the JavaScript styling sheet -->
+<script src="{% static 'Biome/js/master.js'%}"></script>
+
+</html>

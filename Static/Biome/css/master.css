@@ -1,0 +1,63 @@
+@import url(//db.onlinewebfonts.com/c/d0374bf16da70eff39d6f085935f8882?family=DTLProkyonST);
+
+ul {
+    list-style-type: none;
+}
+
+#navigateitems{
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  font-family: "DTLProkyonST";
+
+}
+
+#brand{
+  font-size: 2em;
+  font-weight: bold;
+  font-family: "DTLProkyonST";
+}
+
+body {
+  padding-top: 3em;
+  color:black;
+  position: relative;
+}
+
+td {
+  padding: 10px
+}
+
+.list-group-item-text{
+  color:black
+}
+
+.badge{
+  color:blue
+}
+
+.post_media{
+  font-size: 1.2em;
+  font-family: "DTLProkyonST";
+}
+
+form{
+  padding-left:0.5em;
+  padding-top:1.0em;
+  padding-right:1.0em;
+}
+
+.media-body{
+  font-size: 0.8em;
+  font-family: "DTLProkyonST";
+  padding-bottom:1.5em;
+}
+
+.media-footer{
+  font-family: "DTLProkyonST";
+  padding-left:0.5em;
+}
+
+.textfield{
+  background-color: white
+}
